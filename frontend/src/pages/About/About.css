@@ -1,0 +1,216 @@
+.about-page {
+  margin-top: 80px;
+}
+
+.about-header {
+  background: linear-gradient(135deg, var(--primary-color), #c49563);
+  color: var(--white);
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.about-image {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: var(--text-dark);
+}
+
+.about-text p {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 40px 30px;
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.feature-card p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.about-section {
+  margin-bottom: 60px;
+}
+
+.about-section h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.skills-grid,
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.skill-tag,
+.product-tag {
+  padding: 12px 25px;
+  background: var(--accent-color);
+  border-radius: 25px;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.skill-tag:hover,
+.product-tag:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+.philosophy {
+  background: var(--accent-color);
+  padding: 60px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.philosophy blockquote {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.philosophy blockquote::before {
+  content: '"';
+  font-size: 4rem;
+  color: var(--primary-color);
+  position: absolute;
+  top: -20px;
+  left: -30px;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.education-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border-left: 4px solid var(--primary-color);
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.education-card h3 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.education-card .institution {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+.education-card .description {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+@media (max-width: 968px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .philosophy {
+    padding: 40px 30px;
+  }
+
+  .philosophy blockquote::before {
+    left: 0;
+  }
+}
