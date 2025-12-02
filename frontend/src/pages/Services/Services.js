@@ -55,11 +55,6 @@ const Services = () => {
                 <p className="service-description">{service.description}</p>
                 
                 <div className="service-details">
-                  <div className="service-price">
-                    <span className="price-label">Starting from</span>
-                    <span className="price">${service.startingPrice}</span>
-                  </div>
-                  
                   {service.duration && (
                     <div className="service-duration">
                       <FaClock /> {service.duration}

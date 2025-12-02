@@ -10,6 +10,9 @@ import Footer from './components/Footer/Footer';
 // Pages
 import Home from './pages/Home/Home';
 import Portfolio from './pages/Portfolio/Portfolio';
+import MakeupPortfolio from './pages/Portfolio/MakeupPortfolio';
+import HairPortfolio from './pages/Portfolio/HairPortfolio';
+import SkinNailsPortfolio from './pages/Portfolio/SkinNailsPortfolio';
 import Services from './pages/Services/Services';
 import About from './pages/About/About';
 import Blog from './pages/Blog/Blog';
@@ -37,6 +40,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/makeup" element={<MakeupPortfolio />} />
+          <Route path="/portfolio/hair" element={<HairPortfolio />} />
+          <Route path="/portfolio/skin-nails" element={<SkinNailsPortfolio />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />

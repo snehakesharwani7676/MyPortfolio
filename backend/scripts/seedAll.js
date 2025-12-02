@@ -18,6 +18,9 @@ const seedAll = async () => {
     
     console.log('\n📝 Seeding Blog Posts...');
     execSync('node scripts/seedBlogs.js', { stdio: 'inherit' });
+    
+    console.log('\n👥 Seeding Client Work History...');
+    execSync('node scripts/seedClientHistory.js', { stdio: 'inherit' });
 
     console.log('\n\n✅ ========================================');
     console.log('✅  ALL DATA SEEDED SUCCESSFULLY!');
@@ -28,6 +31,7 @@ const seedAll = async () => {
     console.log('   ✓ 21 Services');
     console.log('   ✓ 10 Client Testimonials');
     console.log('   ✓ 5 Blog Posts');
+    console.log('   ✓ 13 Client Work History Projects');
     console.log('\n🌐 Your website is now fully populated!');
     console.log('🌐 Visit: http://localhost:3000\n');
 

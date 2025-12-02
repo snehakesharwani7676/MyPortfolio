@@ -8,7 +8,15 @@ const portfolioSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    enum: ['Bridal', 'Engagement', 'Glam', 'Reception', 'Fashion/Art', 'Profile Shoot']
+    enum: [
+      // Makeup Portfolio
+      'Bridal', 'Engagement', 'Reception', 'Glam', 'Self Makeup', 'Teen Makeup', 
+      'Fantasy', 'Bronze', 'Model Bride',
+      // Hair Portfolio
+      'Hair-do Gallery', 'Keratin', 'Rebonding', 'Botox', 'Smoothening', 'Hairstyles',
+      // Skin/Nails Portfolio
+      'Nail Art', 'Nail Extension', 'Facials', 'Manicure-Pedicure', 'Waxing'
+    ]
   },
   images: [{
     url: String,

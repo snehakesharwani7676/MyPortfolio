@@ -8,28 +8,24 @@ const createAdminUser = async () => {
     await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/makeup-portfolio');
     console.log('✅ Connected to MongoDB');
 
-    // Check if admin already exists
-    const existingAdmin = await User.findOne({ email: 'admin@makeup.com' });
-    if (existingAdmin) {
-      console.log('⚠️  Admin user already exists!');
-      console.log('Email: admin@makeup.com');
-      process.exit(0);
-    }
+    // Delete any existing admin users first
+    await User.deleteMany({ role: 'admin' });
+    console.log('🗑️  Cleared existing admin users');
 
-    // Create admin user
+    // Create the single admin user
     const admin = await User.create({
-      name: 'Admin',
-      email: 'admin@makeup.com',
-      password: 'admin123', // Will be hashed automatically
+      name: 'Sneha Kesharwani',
+      email: 'sneha@gmail.com',
+      password: 'sneha123', // Will be hashed automatically
       role: 'admin'
     });
 
     console.log('✅ Admin user created successfully!');
     console.log('-----------------------------------');
-    console.log('Email: admin@makeup.com');
-    console.log('Password: admin123');
+    console.log('Email: sneha@gmail.com');
+    console.log('Password: sneha123');
     console.log('-----------------------------------');
-    console.log('⚠️  IMPORTANT: Change this password after first login!');
+    console.log('⚠️  This is the ONLY admin account. No registration allowed!');
     
     process.exit(0);
   } catch (error) {

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { getPortfolioItems } from '../../services/api';
-import ReactCompareImage from 'react-compare-image';
 import './ClientWorkHistory.css';
 
 const ClientWorkHistory = () => {
@@ -75,28 +74,11 @@ const ClientWorkHistory = () => {
               </div>
 
               <div className="work-images">
-                {work.beforeImage && work.afterImage ? (
-                  <div className="before-after-slider">
-                    <ReactCompareImage
-                      leftImage={work.beforeImage}
-                      rightImage={work.afterImage}
-                      sliderLineColor="#d4a574"
-                      sliderLineWidth={3}
-                      handleSize={40}
-                      hover={true}
-                    />
-                    <div className="slider-labels">
-                      <span className="label-before">Before</span>
-                      <span className="label-after">After</span>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="work-gallery">
-                    {work.images.slice(0, 3).map((img, i) => (
-                      <img key={i} src={img.url} alt={`${work.title} ${i + 1}`} />
-                    ))}
-                  </div>
-                )}
+                <div className="work-gallery">
+                  {work.images.slice(0, 3).map((img, i) => (
+                    <img key={i} src={img.url} alt={`${work.title} ${i + 1}`} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>

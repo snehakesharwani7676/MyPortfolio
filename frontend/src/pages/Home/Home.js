@@ -41,8 +41,7 @@ const Home = () => {
     { name: 'Engagement', image: '/images/portfolio/engagement/ENmakeup1.jpg', link: '/portfolio?category=Engagement' },
     { name: 'Glam Makeup', image: '/images/portfolio/glam/GLmakeup1.jpg', link: '/portfolio?category=Glam' },
     { name: 'Reception', image: '/images/portfolio/reception/RCmakeup1.jpg', link: '/portfolio?category=Reception' },
-    { name: 'Fashion/Art', image: '/images/portfolio/fashion/FAmakeup1.jpg', link: '/portfolio?category=Fashion/Art' },
-    { name: 'Profile Shoots', image: '/images/portfolio/bridal/BRmakeup2.jpg', link: '/portfolio?category=Profile Shoot' }
+    { name: 'Fashion/Art', image: '/images/portfolio/fashion/FAmakeup1.jpg', link: '/portfolio?category=Fashion/Art' }
   ];
 
   return (

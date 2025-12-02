@@ -40,11 +40,11 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Services</h4>
             <ul>
-              <li>Bridal Makeup</li>
-              <li>Engagement Makeup</li>
-              <li>Glam Makeup</li>
-              <li>Reception Look</li>
-              <li>Fashion/Art Makeup</li>
+              <li><Link to="/services">Bridal Makeup</Link></li>
+              <li><Link to="/services">Engagement Makeup</Link></li>
+              <li><Link to="/services">Glam Makeup</Link></li>
+              <li><Link to="/services">Reception Look</Link></li>
+              <li><Link to="/services">Fashion/Art Makeup</Link></li>
             </ul>
           </div>
 

@@ -35,7 +35,7 @@ const AdminLogin = () => {
       <div className="login-container">
         <div className="login-card">
           <h1>Admin Login</h1>
-          <p>Access your dashboard</p>
+          <p>Authorized Access Only</p>
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
@@ -46,7 +46,7 @@ const AdminLogin = () => {
                 value={credentials.email}
                 onChange={handleChange}
                 required
-                placeholder="admin@makeup.com"
+                placeholder="sneha@gmail.com"
               />
             </div>
 
