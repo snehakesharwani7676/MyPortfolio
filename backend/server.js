@@ -51,6 +51,42 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Server is running' });
 });
 
+// Setup admin endpoint
+app.get('/api/setup-admin', async (req, res) => {
+  try {
+    const User = require('./models/User');
+    
+    const existingAdmin = await User.findOne({ role: 'admin' });
+    if (existingAdmin) {
+      return res.json({ 
+        message: 'Admin already exists', 
+        email: existingAdmin.email,
+        created: existingAdmin.createdAt
+      });
+    }
+
+    const adminEmail = process.env.ADMIN_EMAIL || 'snehakesharwani76@gmail.com';
+    const adminPassword = process.env.ADMIN_PASSWORD || 'Sneha@91';
+    
+    const admin = await User.create({
+      name: process.env.ADMIN_NAME || 'Sneha Kesharwani',
+      email: adminEmail,
+      password: adminPassword,
+      role: 'admin'
+    });
+
+    res.json({ 
+      success: true, 
+      message: 'Admin created successfully',
+      email: admin.email,
+      password: adminPassword,
+      note: 'Password is hashed in database'
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
