@@ -12,20 +12,26 @@ const createAdminUser = async () => {
     await User.deleteMany({ role: 'admin' });
     console.log('🗑️  Cleared existing admin users');
 
+    // Get admin credentials from environment variables or use defaults
+    const adminEmail = process.env.ADMIN_EMAIL || 'snehakesharwani76@gmail.com';
+    const adminPassword = process.env.ADMIN_PASSWORD || 'Sneha@2025';
+    const adminName = process.env.ADMIN_NAME || 'Sneha Kesharwani';
+
     // Create the single admin user
     const admin = await User.create({
-      name: 'Sneha Kesharwani',
-      email: 'sneha@gmail.com',
-      password: 'sneha123', // Will be hashed automatically
+      name: adminName,
+      email: adminEmail,
+      password: adminPassword, // Will be hashed automatically
       role: 'admin'
     });
 
     console.log('✅ Admin user created successfully!');
     console.log('-----------------------------------');
-    console.log('Email: sneha@gmail.com');
-    console.log('Password: sneha123');
+    console.log(`Email: ${adminEmail}`);
+    console.log(`Password: ${adminPassword}`);
     console.log('-----------------------------------');
     console.log('⚠️  This is the ONLY admin account. No registration allowed!');
+    console.log('💡 Change these credentials in production via .env file');
     
     process.exit(0);
   } catch (error) {

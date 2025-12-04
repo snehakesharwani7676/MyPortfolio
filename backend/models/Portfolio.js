@@ -11,11 +11,14 @@ const portfolioSchema = new mongoose.Schema({
     enum: [
       // Makeup Portfolio
       'Bridal', 'Engagement', 'Reception', 'Glam', 'Self Makeup', 'Teen Makeup', 
-      'Fantasy', 'Bronze', 'Model Bride',
+      'Fantasy', 'Bronze Tan', 'Modern Bride', 'Airbrush Makeup',
       // Hair Portfolio
-      'Hair-do Gallery', 'Keratin', 'Rebonding', 'Botox', 'Smoothening', 'Hairstyles',
+      'Hair-do Gallery', 'Keratin', 'Rebonding', 'Botox', 'Smoothening',
+      'Anti-Hairfall Treatment', 'Anti-Dandruff Treatment', 'Global Hair Color with Highlights',
       // Skin/Nails Portfolio
-      'Nail Art', 'Nail Extension', 'Facials', 'Manicure-Pedicure', 'Waxing'
+      'Nail Art', 'Nail Extension', 'Facials', 'Manicure-Pedicure', 'Waxing',
+      'Machinery Facial', 'High Frequency Treatment', 'Galvanic Treatment',
+      'Ultrasonic Treatment', 'Hydra Facial', 'Phytic Facial'
     ]
   },
   images: [{

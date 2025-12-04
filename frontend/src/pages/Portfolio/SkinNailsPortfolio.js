@@ -17,11 +17,14 @@ const SkinNailsPortfolio = () => {
 
   const categories = [
     'All', 'Nail Art', 'Nail Extension', 'Facials', 
-    'Manicure-Pedicure', 'Waxing'
+    'Manicure-Pedicure', 'Waxing', 'Machinery Facial',
+    'High Frequency Treatment', 'Galvanic Treatment',
+    'Ultrasonic Treatment', 'Hydra Facial', 'Phytic Facial'
   ];
 
   useEffect(() => {
     fetchPortfolio();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { sendContactMessage } from '../../services/api';
 import { toast } from 'react-toastify';
-import { FaEnvelope, FaMapMarkerAlt, FaInstagram, FaFacebook } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaInstagram, FaFilePdf } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
@@ -68,22 +68,35 @@ const Contact = () => {
                 <FaInstagram className="contact-icon" />
                 <div>
                   <h4>Instagram</h4>
-                  <p>@sneha_kesharwani13</p>
+                  <p>@snehakesharwani13</p>
                 </div>
               </div>
             </div>
 
             <div className="social-section">
-              <h3>Follow Me on Social Media</h3>
+              <h3>Follow Me on Instagram</h3>
               <div className="social-icons">
-                <a href="https://www.instagram.com/sneha_kesharwani13" target="_blank" rel="noopener noreferrer" title="@sneha_kesharwani13">
+                <a href="https://www.instagram.com/snehakesharwani13" target="_blank" rel="noopener noreferrer" title="Follow @snehakesharwani13">
                   <FaInstagram />
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
-                  <FaFacebook />
-                </a>
               </div>
-              <p style={{ marginTop: '15px', color: '#666' }}>@sneha_kesharwani13</p>
+              <p style={{ marginTop: '15px', color: '#666', fontSize: '16px' }}>
+                <strong>@snehakesharwani13</strong>
+              </p>
+            </div>
+
+            <div className="cv-section">
+              <h3>My Resume</h3>
+              <p>View my professional experience and qualifications</p>
+              <a 
+                href="/sneha-resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="cv-button"
+              >
+                <FaFilePdf className="cv-icon" />
+                <span>View My CV</span>
+              </a>
             </div>
           </div>
 

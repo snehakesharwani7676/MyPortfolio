@@ -171,6 +171,20 @@ const clientHistoryData = [
     afterImage: '/images/portfolio/glam/GLmakeup5.jpg',
     tags: ['glam', 'party', 'metallic', 'new year'],
     featured: false
+  },
+
+  // Keratin Treatment
+  {
+    title: 'Keratin Hair Treatment',
+    category: 'Keratin',
+    clientName: 'Aisha Khan',
+    eventDate: new Date('2024-11-18'),
+    description: 'Professional keratin treatment for frizzy and damaged hair. Transformed rough, unmanageable hair into smooth, silky, and shiny locks. The treatment provided long-lasting results with reduced frizz and improved hair texture. Client was thrilled with the glossy, salon-perfect finish.',
+    images: [{ url: '/images/portfolio/keratin/KRhair1.jpg', caption: 'Keratin treatment results' }],
+    beforeImage: '/images/portfolio/keratin/KRhair1.jpg',
+    afterImage: '/images/portfolio/keratin/KRhair1.jpg',
+    tags: ['keratin', 'hair treatment', 'smooth hair', 'anti-frizz'],
+    featured: true
   }
 ];
 

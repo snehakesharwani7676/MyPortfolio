@@ -17,7 +17,8 @@ const HairPortfolio = () => {
 
   const categories = [
     'All', 'Hair-do Gallery', 'Keratin', 'Rebonding', 
-    'Botox', 'Smoothening', 'Hairstyles'
+    'Botox', 'Smoothening', 'Anti-Hairfall Treatment', 
+    'Anti-Dandruff Treatment', 'Global Hair Color with Highlights'
   ];
 
   useEffect(() => {

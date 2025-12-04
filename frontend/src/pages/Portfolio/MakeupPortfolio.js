@@ -17,11 +17,12 @@ const MakeupPortfolio = () => {
 
   const categories = [
     'All', 'Bridal', 'Engagement', 'Reception', 'Glam', 
-    'Self Makeup', 'Teen Makeup', 'Fantasy', 'Bronze', 'Model Bride'
+    'Self Makeup', 'Teen Makeup', 'Fantasy', 'Bronze Tan', 'Modern Bride', 'Airbrush Makeup'
   ];
 
   useEffect(() => {
     fetchPortfolio();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

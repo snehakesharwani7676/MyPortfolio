@@ -32,7 +32,7 @@
 }
 
 .contact-details {
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .contact-item {
@@ -58,33 +58,94 @@
   color: var(--text-light);
 }
 
+.social-section {
+  background: linear-gradient(135deg, #f8f4f0, #fff5eb);
+  padding: 35px 30px;
+  border-radius: 15px;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 .social-section h3 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
   color: var(--text-dark);
+  font-weight: 600;
 }
 
 .social-icons {
   display: flex;
   gap: 15px;
+  justify-content: center;
 }
 
 .social-icons a {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background: var(--primary-color);
+  background: linear-gradient(135deg, #e1306c, #fd1d1d, #f77737, #fcaf45);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--white);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
 }
 
 .social-icons a:hover {
-  background: #c49563;
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 6px 20px rgba(225, 48, 108, 0.5);
+}
+
+.cv-section {
+  background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+  padding: 35px 30px;
+  border-radius: 15px;
+  border: 2px solid #dc3545;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.2);
+  text-align: center;
+}
+
+.cv-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.cv-section p {
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: var(--white);
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.cv-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.5);
+  background: linear-gradient(135deg, #c82333, #bd2130);
+}
+
+.cv-icon {
+  font-size: 1.5rem;
 }
 
 .contact-form {

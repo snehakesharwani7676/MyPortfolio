@@ -59,7 +59,7 @@ const Home = () => {
           className="hero-slider"
         >
           <SwiperSlide>
-            <div className="hero-slide" style={{ backgroundImage: 'url(/images/hero/hero1.jpg)' }}>
+            <div className="hero-slide" style={{ backgroundImage: 'url(/images/hero/hero1.png)' }}>
               <div className="hero-content">
                 <h1>Sneha Kesharwani</h1>
                 <p>Certified Beautician & Makeup Artist</p>
@@ -72,7 +72,7 @@ const Home = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="hero-slide" style={{ backgroundImage: 'url(/images/hero/hero2.jpg)' }}>
+            <div className="hero-slide" style={{ backgroundImage: 'url(/images/hero/hero2.png)' }}>
               <div className="hero-content">
                 <h1>Transform Your Look</h1>
                 <p>Professional Makeup for Weddings & Special Events</p>

@@ -48,13 +48,7 @@ const ClientWorkHistory = () => {
                 <span className="work-number">#{workHistory.length - index}</span>
                 <h2>{work.title}</h2>
                 <div className="work-meta">
-                  <span className="client-name">👤 {work.clientName}</span>
                   <span className="category-badge">{work.category}</span>
-                  {work.eventDate && (
-                    <span className="event-date">
-                      📅 {new Date(work.eventDate).toLocaleDateString()}
-                    </span>
-                  )}
                 </div>
                 
                 {work.description && (

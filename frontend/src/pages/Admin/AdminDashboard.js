@@ -18,7 +18,6 @@ const AdminDashboard = () => {
   const [showPortfolioManager, setShowPortfolioManager] = useState(false);
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [uploadData, setUploadData] = useState({
-    title: '',
     category: 'Bridal',
     imageUrl: '',
     clientName: '',
@@ -73,7 +72,8 @@ const AdminDashboard = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/portfolio/${id}`, {
+      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+      const response = await fetch(`${API_URL}/portfolio/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -135,20 +135,40 @@ const AdminDashboard = () => {
     }
 
     // Automatically convert Google Drive links
-    const convertedUrl = convertGoogleDriveLink(uploadData.imageUrl);
+    let convertedUrl = convertGoogleDriveLink(uploadData.imageUrl);
+    
+    // Auto-fix: Add leading slash if missing for local paths
+    if (convertedUrl.startsWith('images/')) {
+      convertedUrl = '/' + convertedUrl;
+      toast.info('Auto-fixed: Added leading slash to path');
+    }
+    
+    // Auto-fix: Replace spaces with dashes in filename
+    if (convertedUrl.includes(' ')) {
+      convertedUrl = convertedUrl.replace(/ /g, '-');
+      toast.info('Auto-fixed: Replaced spaces with dashes in filename');
+    }
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/portfolio', {
+      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+      
+      // Generate unique title with timestamp
+      const timestamp = Date.now();
+      const uniqueTitle = uploadData.clientName 
+        ? `${uploadData.category} - ${uploadData.clientName}`
+        : `${uploadData.category} - ${timestamp}`;
+      
+      const response = await fetch(`${API_URL}/portfolio`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
-          title: uploadData.title,
+          title: uniqueTitle,
           category: uploadData.category,
-          images: [{ url: convertedUrl, caption: uploadData.title }],
+          images: [{ url: convertedUrl, caption: uploadData.category }],
           clientName: uploadData.clientName,
           description: uploadData.description,
           afterImage: convertedUrl,
@@ -160,7 +180,6 @@ const AdminDashboard = () => {
         toast.success('Portfolio item added successfully!');
         setShowUploadModal(false);
         setUploadData({
-          title: '',
           category: 'Bridal',
           imageUrl: '',
           clientName: '',
@@ -168,11 +187,13 @@ const AdminDashboard = () => {
         });
         fetchDashboardData();
       } else {
-        toast.error('Failed to add portfolio item');
+        const errorData = await response.json();
+        toast.error(`Failed: ${errorData.message || 'Unknown error'}`);
+        console.error('Upload error:', errorData);
       }
     } catch (error) {
-      toast.error('Error uploading portfolio item');
-      console.error(error);
+      toast.error(`Error: ${error.message}`);
+      console.error('Upload exception:', error);
     }
   };
 
@@ -343,17 +364,6 @@ const AdminDashboard = () => {
             <h2>Upload Portfolio Image</h2>
             <form onSubmit={handleUploadSubmit}>
               <div className="form-group">
-                <label>Title *</label>
-                <input
-                  type="text"
-                  value={uploadData.title}
-                  onChange={(e) => setUploadData({...uploadData, title: e.target.value})}
-                  required
-                  placeholder="e.g., Bridal Makeup - Priya's Wedding"
-                />
-              </div>
-
-              <div className="form-group">
                 <label>Category *</label>
                 <select
                   value={uploadData.category}
@@ -363,13 +373,14 @@ const AdminDashboard = () => {
                   <optgroup label="Makeup Portfolio">
                     <option value="Bridal">Bridal</option>
                     <option value="Engagement">Engagement</option>
-                    <option value="Reception">Reception</option>
                     <option value="Glam">Glam</option>
+                    <option value="Reception">Reception</option>
                     <option value="Self Makeup">Self Makeup</option>
                     <option value="Teen Makeup">Teen Makeup</option>
                     <option value="Fantasy">Fantasy</option>
-                    <option value="Bronze">Bronze</option>
-                    <option value="Model Bride">Model Bride</option>
+                    <option value="Bronze Tan">Bronze Tan</option>
+                    <option value="Modern Bride">Modern Bride</option>
+                    <option value="Airbrush Makeup">Airbrush Makeup</option>
                   </optgroup>
                   <optgroup label="Hair Portfolio">
                     <option value="Hair-do Gallery">Hair-do Gallery</option>
@@ -377,14 +388,22 @@ const AdminDashboard = () => {
                     <option value="Rebonding">Rebonding</option>
                     <option value="Botox">Botox</option>
                     <option value="Smoothening">Smoothening</option>
-                    <option value="Hairstyles">Hairstyles</option>
+                    <option value="Anti-Hairfall Treatment">Anti-Hairfall Treatment</option>
+                    <option value="Anti-Dandruff Treatment">Anti-Dandruff Treatment</option>
+                    <option value="Global Hair Color with Highlights">Global Hair Color with Highlights</option>
                   </optgroup>
-                  <optgroup label="Skin/Nails Portfolio">
+                  <optgroup label="Skin & Nails Portfolio">
                     <option value="Nail Art">Nail Art</option>
                     <option value="Nail Extension">Nail Extension</option>
                     <option value="Facials">Facials</option>
                     <option value="Manicure-Pedicure">Manicure-Pedicure</option>
                     <option value="Waxing">Waxing</option>
+                    <option value="Machinery Facial">Machinery Facial</option>
+                    <option value="High Frequency Treatment">High Frequency Treatment</option>
+                    <option value="Galvanic Treatment">Galvanic Treatment</option>
+                    <option value="Ultrasonic Treatment">Ultrasonic Treatment</option>
+                    <option value="Hydra Facial">Hydra Facial</option>
+                    <option value="Phytic Facial">Phytic Facial</option>
                   </optgroup>
                 </select>
               </div>
