@@ -9,15 +9,17 @@ dotenv.config();
 const app = express();
 
 // Middleware
-const allowedOrigins = [
-  'http://localhost:3000',
-  'https://snehakesharwani.netlify.app',
-  process.env.FRONTEND_URL
-].filter(Boolean);
-
 const corsOptions = {
   origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
+    // Allow requests with no origin (mobile apps, Postman, etc.)
+    if (!origin) return callback(null, true);
+    
+    // Allow localhost and Netlify domains
+    if (
+      origin.includes('localhost') ||
+      origin.includes('netlify.app') ||
+      origin === process.env.FRONTEND_URL
+    ) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
