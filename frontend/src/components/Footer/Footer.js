@@ -13,7 +13,7 @@ const Footer = () => {
             <p>Certified Beautician & Makeup Artist</p>
             <p style={{ marginTop: '10px', fontSize: '0.95rem' }}>Creating elegant transformations for weddings, engagements, and premium events.</p>
             <div className="social-links">
-              <a href="https://www.instagram.com/sneha_kesharwani13" target="_blank" rel="noopener noreferrer" title="Follow on Instagram">
+              <a href="https://www.instagram.com/snehakesharwani13" target="_blank" rel="noopener noreferrer" title="Follow on Instagram">
                 <FaInstagram />
               </a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Follow on Facebook">
@@ -23,7 +23,7 @@ const Footer = () => {
                 <FaYoutube />
               </a>
             </div>
-            <p style={{ marginTop: '10px', fontSize: '0.9rem', color: '#ccc' }}>@sneha_kesharwani13</p>
+            <p style={{ marginTop: '10px', fontSize: '0.9rem', color: '#ccc' }}>@snehakesharwani13</p>
           </div>
 
           <div className="footer-section">
